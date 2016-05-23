@@ -5,4 +5,4 @@
  TODO: Setup Routes
  */
 
-document.write('webpack is working, aww hellz yeah');
+document.write("webpack is working, aww hellz yeah :-) ;-)" );
