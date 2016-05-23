@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta content="" name="description">
+    <title>Computer Obaachan</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="obaachan.png" />
+    </header>
+    <nav>
+        <a href="#">
+            <span>&#x1F4A9;</span>
+        </a>
+        <a href="#">
+            <span>&#x1F47E;</span>
+        </a>
+        <a href="#">
+            <span>&#x1F432;</span>
+        </a>
+        <a href="#" class="create active">
+            <span>&#x1F4A9;</span>
+        </a>
+    </nav>
+    <div class="conversation create-obaachan container">
+        <section>
+            <form>
+                <label>Avatar</label>
+                <select>
+                    <option value="&#x1F4A9;">&#x1F4A9;</option>
+                    <option value="&#x1F4A9;">&#x1F4A9;</option>
+                    <option value="&#x1F4A9;">&#x1F4A9;</option>
+                </select>
+                <label>Name</label>
+                <input type="text" />
+                <label>Text Color</label>
+                <div class="color-item active" data-color="" style="background-color: #ffffff">
+                    <label>
+                        <input class="u-hidden" type="radio" name="text-color">
+                    </label>
+                </div>
+                <div class="color-item" data-color="" style="background-color: #e81c4f">
+                    <label>
+                        <input class="u-hidden" type="radio" name="text-color">
+                    </label>
+                </div>
+                <label>Background</label>
+                <div class="color-item active" data-color="" style="background-color: #e81c4f">
+                    <label>
+                        <input class="u-hidden" type="radio" name="background-color">
+                    </label>
+                </div>
+                <div class="color-item" data-color="" style="background-color: #e81c4f">
+                    <label>
+                        <input class="u-hidden" type="radio" name="background-color">
+                    </label>
+                </div>
+                <div class="color-item" data-color="" style="background-color: #e81c4f">
+                    <label>
+                        <input class="u-hidden" type="radio" name="background-color">
+                    </label>
+                </div>
+                <div class="color-item" data-color="" style="background-color: #e81c4f">
+                    <label>
+                        <input class="u-hidden" type="radio" name="background-color">
+                    </label>
+                </div>
+                <label>Language</label>
+                <select>
+                    <option value="spanish">Spanish</option>
+                    <option value="polish">Polish</option>
+                    <option value="japanese">Japanese</option>
+                </select>
+                <label>Recursion</label>
+                <input type="range" min="1" max="10" step="1" value="1" />
+            </form>
+            <div class="message message-obaachan">
+                <div class="avatar">
+                    <span></span>
+                </div>
+                <div class="main">
+                    <p>Some Text</p>
+                </div>
+            </div>
+        </section>
+        <div class="text-box">
+            <input type="text"></input>
+        </div>
+        <button class="btn-primary">Create</button>
+        <button>Cancel</button>
+    </div>
+</body>
+
+</html>
