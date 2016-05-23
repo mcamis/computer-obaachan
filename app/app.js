@@ -1,8 +1,5 @@
-// import React  from 'react';
-// import { Router, Route } from 'react-router';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Hello from './hello'
 
-/*
- TODO: Setup Routes
- */
-
-document.write("webpack is working, aww hellz yeah :-) ;-)" );
+ReactDOM.render(<Hello name="Obachaan World" />, document.querySelector("#app"));

@@ -4,7 +4,7 @@
   "description": "A React chatbot that parrots messages via recursively translated gibberish.",
   "main": "assets/js/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,21 @@
   "homepage": "https://github.com/mcamis/computer-obaachan#readme",
   "devDependencies": {
     "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
+    "eslint": "^2.10.2",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-react": "^5.1.1",
+    "eslint-plugin-standard": "^1.3.2",
     "html-webpack-plugin": "^2.17.0",
     "jshint": "^2.9.2",
     "jshint-loader": "^0.8.3",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

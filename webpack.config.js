@@ -11,7 +11,7 @@ module.exports = {
     ],
     output: {
         path: './dist',
-        filename: "app_bundle.js"
+        filename: "bundle.js"
     },
     watch: true,
     plugins: [HTMLWebpackPluginConfig],
@@ -19,10 +19,15 @@ module.exports = {
         preLoaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'jshint-loader'
+            loader: 'eslint'
         }],
+        // preLoaders: [{
+        //     test: /\.js$/,
+        //     exclude: /node_modules/,
+        //     loader: 'jshint-loader'
+        // }],
         loaders: [{
-            test: /\.es6$/,
+            test: [/\.js$/, /\.es6$/],
             exclude: /node_modules/,
             loader: "babel-loader",
             query: {
@@ -32,5 +37,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.es6']
+    },
+    eslint: {
+        failOnWarning: false,
+        failOnError: true
     },
 }
