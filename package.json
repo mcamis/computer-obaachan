@@ -1,0 +1,19 @@
+{
+  "name": "computer-obaachan",
+  "version": "1.0.0",
+  "description": "A React chatbot that parrots messages via recursively translated gibberish.",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcamis/computer-obaachan.git"
+  },
+  "author": "Adam McAmis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcamis/computer-obaachan/issues"
+  },
+  "homepage": "https://github.com/mcamis/computer-obaachan#readme"
+}
