@@ -1,7 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import Hello from './hello'
+import MessageBox from './message-box'
+import Message from './message'
+import autobind from 'autobind-decorator'
 
+
+@autobind
 class App extends React.Component {
 
     constructor() {
@@ -13,18 +17,29 @@ class App extends React.Component {
         }
     }
 
-	loadSamples() {
-		console.log("loading samples");
-	    this.setState({
-	      messages : require('../sample-messages.js')
-	    });
-	}
+    addMessageToState(message) {
+        this.state.messages['message-' + message.timestamp] = message;
+        this.setState({ messages : this.state.messages });
+    }
+
+    renderMessage(key){
+        return <Message key={key} index={key} details={this.state.messages[key]} />
+    }
 
     render() {
     	return(
-    		<div>
-	        	<Hello name="Obaachan World!" loadSamples={this.loadSamples.bind(this)} />
-	    	</div>
+            <div>
+                <Hello />
+                <div className="messages">
+                    <div className="container">  
+                        <ul>
+                            {Object.keys(this.state.messages).map(this.renderMessage)}
+                        </ul>     
+                    </div>
+                    <MessageBox addMessageToState={this.addMessageToState} />
+                </div>
+            </div>
+
     	)
     }
 };

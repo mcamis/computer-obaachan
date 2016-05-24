@@ -36,7 +36,7 @@ module.exports = {
 
     message4: {
         user: {
-            type: 'human',
+            type: 'bot',
             avatar: '',
             background: '#E50A5B',
             color: 'white'
