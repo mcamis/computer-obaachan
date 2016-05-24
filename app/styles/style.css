@@ -102,16 +102,16 @@ h1 span {
 }
 
 .text-box {
-    background-color: #E2E2E2;
+    background-color: rgba(244,244,244,.24);
     width: 100%;
     font-size: 16px;
-    padding: 1rem 2rem;
+    padding: 8px 2rem;
     position: fixed;
     bottom: 0;
     left: 0;
 }
 
-.text-box > div {
+.text-box form {
     max-width: 500px;
     padding: 0 2rem;
     margin: 0 auto;
@@ -122,6 +122,15 @@ input[type="text"] {
     display: block;
     font-size: 16px;
     padding: .5em .5em;
-    border-radius: 2px;
+    border-radius: 0 0 2px 2px;
     border: none;
 }
+/*.text-box button {
+    width: 80px;
+    text-align: center;
+    float: right;
+    font-size: 16px;
+    padding: .5em 0;
+    border-radius: 2px 2px 0 0;
+    border: none;
+}*/

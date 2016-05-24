@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mcamis/computer-obaachan#readme",
   "devDependencies": {
+    "autobind-decorator": "^1.3.3",
     "babel-core": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",

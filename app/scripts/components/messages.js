@@ -1,6 +1,25 @@
 import React from "react";
+import autobind from 'autobind-decorator';
 
+// @autobind
 class Messages extends React.Component {
+
+	addMessage(e){
+		e.preventDefault();
+
+		var message = {
+			user : {
+				type : 'human'
+			},
+			timestamp : Date.now(),
+			message : this.refs.message.value
+		}
+
+		console.log(message);
+		// this.props.addToMessages();
+		this.refs.messageForm.reset();
+	}
+
 	render() {
 	   return (
 	     <div className="messages">
@@ -11,9 +30,9 @@ class Messages extends React.Component {
  			     <p className="bot">As Grace Hopper art.</p> 			   
 			</div>
 			<div className="text-box">
-			<div>
-	            <input type="text"></input>
-	            </div>
+				<form onSubmit={this.addMessage.bind(this)} ref="messageForm">
+		            <input type="text" placeholder="Type message" ref="message" ></input>
+	            </form>
 	        </div>
 
 	     </div>
