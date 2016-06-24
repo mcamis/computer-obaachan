@@ -5,7 +5,6 @@ class Hello extends React.Component {
 	   return (
 		<div>
 			<header>
-		         <h1>Computer Obaachan<span>コンピューターおばあちゃん</span></h1>
 		     </header>
 		</div>
 	   )

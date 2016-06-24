@@ -1,5 +1,6 @@
 import React from "react";
 import autobind from 'autobind-decorator'
+import {findDOMNode} from 'react-dom'
 
 @autobind
 class MessageBox extends React.Component {
@@ -13,6 +14,7 @@ class MessageBox extends React.Component {
 				user : {
 					type : 'human'
 				},
+				loading: false,
 				timestamp : Date.now(),
 				message : this.refs.message.value
 			}
@@ -21,11 +23,15 @@ class MessageBox extends React.Component {
 		}
 	}
 
+	componentDidMount(){
+		findDOMNode(this.refs.message).focus(); 
+    }
+
 	render() {
 	   return (
 			<div className="text-box">
 				<form onSubmit={this.addMessage} ref="messageForm">
-		            <input type="text" placeholder="Type message" ref="message" ></input>
+		            <input type="text" placeholder="Type here" ref="message"></input>
 	            </form>
 	        </div>
 		)
