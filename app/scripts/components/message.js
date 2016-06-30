@@ -12,8 +12,15 @@ class Message extends React.Component {
 		element.scrollIntoView({block: "end", behavior: "smooth"});
     }
     render() {
-    	console.log(this.props.loading);
-	    return ( < li className = { this.props.details.user.type } > { this.props.details.message } < /li>)
+    	console.log(this.props.details.loading);
+    	var messageClass = this.props.details.user.type;
+    	if(this.props.details.loading){
+    		messageClass += ' loading';
+    	}
+	   
+		    	return (
+			    		<li className={messageClass} > { this.props.details.message }<span></span> < /li>
+				)	
     }
 }
 

@@ -29,20 +29,23 @@ class App extends React.Component {
     }
 
     translateMessage(humanMessage){
-        var reverse = function (s) {
-            return s.split('').reverse().join('');
-        }
+        var self = this;
+        const originalMessage = humanMessage.message;
+        const messageTimestamp = humanMessage.timestamp+2;
 
         var message = {
             user : {
                 type : 'bot'
             },
             loading: true,
-            timestamp : humanMessage.timestamp+2,
-            message : reverse(humanMessage.message)
+            timestamp : messageTimestamp,
+            message : ' '
         }
 
-        this.addMessageToState(message);
+        setTimeout(function() {
+            self.addMessageToState(message);
+        }, 500);
+
     }
 
     renderMessage(key){

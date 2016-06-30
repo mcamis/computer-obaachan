@@ -81,7 +81,6 @@ h1 span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
 }
 
 li {
@@ -92,25 +91,20 @@ li {
     align-self: flex-end;
     max-width: 300px;
     margin-bottom: .25rem;
+    min-height: 44px;
 }
 
 li.human {
     align-self: flex-end;
     text-align: right;
-}
-
-.human:nth-child(1) {
     border-radius: 18px 0 18px 18px;
-}
-
-.bot:nth-child(1) {
-    border-radius: 0 18px 18px 18px;
 }
 
 li.bot {
     align-self: flex-start;
     background-color: #E50A5B;
     color: white;
+    border-radius: 0 18px 18px 18px;
 }
 
 .text-box {
@@ -149,11 +143,13 @@ input[type="text"]:focus {
 
 /* Animation */
 
-.messageIn-enter {}
+.messageIn-enter {
+    transform: scale3d(0, 0, 0);
+}
 
 .messageIn-enter.messageIn-enter-active {
     animation-name: popIn;
-    animation-duration: 250ms;
+    animation-duration: 300ms;
     animation-fill-mode: both;
 }
 
@@ -163,12 +159,67 @@ input[type="text"]:focus {
 
 @keyframes popIn {
     from {
-        transform: scale3d(1, 1, 1);
+        transform: scale3d(0, 0, 0);
     }
-    20% {
+    60% {
         transform: scale3d(1.25, 1.25, 1.25);
     }
     to {
         transform: scale3d(1, 1, 1);
     }
+}
+
+@keyframes loadingDot {
+    from {
+        /*transform: scale3d(1, 1, 1);*/
+        background-color: rgba(0, 0, 0, 0.45);
+        border-radius: 15%;
+    }
+    20% {
+        /*transform: scale3d(1.5, 1.5, 1.5);*/
+        border-radius: 50%;
+    }
+    to {
+        /*transform: scale3d(1, 1, 1);*/
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 10%;
+    }
+}
+
+.bot.loading > span,
+.bot.loading > span::before,
+.bot.loading > span::after {
+    display: block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 25%;
+    animation-name: loadingDot;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.bot.loading > span {
+    position: relative;
+    margin: 4px 22px 0;
+    animation-delay: 250ms;
+}
+
+.bot.loading > span::before,
+.bot.loading > span::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+}
+
+.bot.loading > span:before {
+    left: -24px;
+    animation-delay: 0ms;
+}
+
+.bot.loading > span:after {
+    right: -24px;
+    animation-delay: 750ms;
 }
