@@ -4,7 +4,8 @@
   "description": "A React chatbot that parrots messages via recursively translated gibberish.",
   "main": "assets/js/main.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "prettier:fix": "prettier --single-quote --trailing-comma es5 --write './app/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "html-webpack-plugin": "^2.17.0",
     "jshint": "^2.9.2",
     "jshint-loader": "^0.8.3",
+    "prettier": "^1.10.2",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.1.0",
